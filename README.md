@@ -1,28 +1,13 @@
 # Proyecto-3-avanzadas
 
+Servidor con mongodb y neo4j
 
-contrasenia instancia neo4j
-
-
-#  b.noQfEB2BBRQZ.C1NciTckLPQ7810r
+ec2-174-129-170-28.compute-1.amazonaws.com
 
 
-
-bolt
-
-
-bolt://hobby-behgjgnojkelgbkeednghgal.dbs.graphenedb.com:24786
+ec2-174-129-170-28.compute-1.amazonaws.com:7474 neo4j
+(neo4j,123456)
 
 
-rest
-
-
-http://hobby-behgjgnojkelgbkeednghgal.dbs.graphenedb.com:24789/db/data/
-
-
-
-https://app.graphenedb.com/dbs/avanzadas/connection
-
-correo: shagy1dos3@gmail.com
-
-pass: x100prexd
+ec2-174-129-170-28.compute-1.amazonaws.com:27017 mongodb
+(no tiene credenciales para entrar)
