@@ -1,0 +1,51 @@
+
+<br />
+<!-- Page Content -->
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-lg-3">
+
+      <h1 class="my-4">Electrodomesticos</h1>
+      <div class="list-group">
+        <a href="/" class="list-group-item">Volver a inicio</a>
+        <a href="/libros" class="list-group-item">Libros</a>
+        <a href="/dvds" class="list-group-item">DVD's</a>
+      </div>
+
+    </div>
+    <!-- /.col-lg-3 -->
+
+    <div class="col-lg-9" ng-init="getElectrodomesticos()">
+
+      <div class="row" style="margin-top: 12%;">
+
+        <div class="col-lg-4 col-md-6 mb-4" ng-repeat="electrodomestico in electrodomesticos">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                   <a href="#">{{electrodomestico.nombre}}</a>
+                 </h4>
+              <h5>{{electrodomestico.precio}}</h5>
+              <p class="card-text">{{electrodomestico.descripcion}}</p>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-warning" ng-click="agregarArticulo(electrodomestico)">Comprar</button>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.col-lg-9 -->
+
+  </div>
+  <!-- /.row -->
+
+</div>
+<!-- /.container -->

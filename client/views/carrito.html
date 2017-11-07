@@ -1,0 +1,43 @@
+<div class="row">
+
+
+  <div class="col-md-10" style="padding-left:10%;padding-right:10%;padding-top:5%;" ng-init="cargarCarrito()">
+
+    <h1>Carrito de Compras</h1>
+
+    <div class="row" ng-repeat="articulo in carrito">
+      <div class="col-md-4">
+        <h5>Nombre: {{articulo.nombre}}</h5>
+
+      </div>
+      <div class="col-md-3">
+        <h5>Precio: {{articulo.precio}}</h5>
+
+      </div>
+      <div class="col-md-2">
+        <h5>Cantidad:</h5><input style="width:30px;" type="number" ng-model="articulo.cantidad"/>
+
+      </div>
+      <div class="col-md-3">
+
+        <button class="btn btn-success" ng-click="actualizarCantidad(articulo)">Actualizar</button>
+        <button class="btn btn-danger" ng-click="eliminarArticulo(articulo)">Eliminar</button>
+
+
+      </div>
+
+    </div>
+    <div class="row">
+
+      <div class="col-md-12">
+
+        <button class="btn btn-primary" ng-click="realizarCompra(articulo)">Comprar</button>
+
+
+      </div>
+    </div>
+
+
+  </div>
+
+</div>

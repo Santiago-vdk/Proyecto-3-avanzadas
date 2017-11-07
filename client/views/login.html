@@ -1,0 +1,71 @@
+<style>
+  .sign-in-form {
+    padding: 1rem 1.5em;
+    background-color: #3d454f;
+  }
+
+  .sign-in-form h4 {
+    color: white;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .sign-in-form label {
+    text-transform: uppercase;
+    color: #adadad;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .sign-in-form input {
+    color: black;
+  }
+
+  .sign-in-form input:focus {
+    opacity: .8;
+  }
+
+  .sign-in-form-username,
+  .sign-in-form-password {
+    border-radius: 30px;
+    border: none;
+    opacity: .1;
+    transition: all ease .4s;
+  }
+
+  .sign-in-form-button {
+    border-radius: 30px;
+    border: 1px solid #fff;
+    color: #fff;
+    background-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 100%;
+    padding: 1rem;
+    transition: all ease .4s;
+  }
+
+  .sign-in-form-button:hover {
+    background-color: #44c8ed;
+    border-color: #44c8ed;
+  }
+</style>
+
+<div class="container">
+  <div class="col-md-12">
+    <form ng-model="cliente">
+      <div class="sign-in-form" style="text-align: center;">
+        <h4 class="text-center">Iniciar Sesión</h4>
+        <label for="sign-in-form-username">Username</label>
+        <input type="text" ng-model="cliente.username" class="sign-in-form-username" id="sign-in-form-username">
+        <br />
+        <label for="sign-in-form-password">Password</label>
+        <input type="text" ng-model="cliente.password" class="sign-in-form-password" id="sign-in-form-password">
+
+        <button type="submit" ng-click="login(cliente)" class="sign-in-form-button">Sign In</button>
+      </div>
+    </form>
+  </div>
+</div>

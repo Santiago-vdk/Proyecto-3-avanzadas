@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-md-12">
+    <h1>Agregar producto dvd</h1>
+  </div>
+</div>
+
+<div class="row">
+
+  <div class="col-md-12">
+    <form ng-model="articulo">
+      Nombre: <input ng-model="articulo.nombre" type="text" name="fname"><br>
+      Descripcion: <input ng-model="articulo.descripcion" type="text" name="lname"><br>
+      Precio: <input ng-model="articulo.precio" type="text" name="lname"><br>
+
+      <select ng-model="articulo.tipo">
+        <option value="libro">Libro</option>
+        <option value="electrodomestico">Electrodomestico</option>
+        <option value="dvd">DVD</option>
+
+      </select>
+
+      <button class="btn btn-success" ng-click="agregarArticulo(articulo)">Agregar</button>
+    </form>
+
+  </div>
+</div>

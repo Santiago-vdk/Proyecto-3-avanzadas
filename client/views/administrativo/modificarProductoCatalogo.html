@@ -1,0 +1,39 @@
+<h1>Productos del Catálogo</h1>
+<div ng-init="cargarCatalogo()">
+
+  <div class="row">
+    <div class="col-md-4">
+      <h5>Nombre</h5>
+
+    </div>
+    <div class="col-md-3">
+      <h5>Precio</h5>
+
+    </div>
+    <div class="col-md-2">
+      <h5>Operaciones</h5>
+
+    </div>
+  </div>
+  <br />
+  <div class="row" ng-repeat="articulo in catalogo" style="margin-top:20px;">
+    <div class="col-md-4">
+      <input type="string" ng-model="articulo.nombre"/>
+
+    </div>
+    <div class="col-md-3">
+      <input type="string" ng-model="articulo.precio"/>
+
+    </div>
+    <div class="col-md-5">
+      <button class="btn btn-success" ng-click="actualizarArticulo(articulo)">Actualizar</button>
+      <button class="btn btn-danger" ng-click="eliminarArticulo(articulo)">Eliminar</button>
+
+
+    </div>
+
+  </div>
+
+
+
+</div>
