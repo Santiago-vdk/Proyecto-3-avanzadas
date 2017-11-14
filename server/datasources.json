@@ -1,1 +1,7 @@
-{}
+{
+  "mongo": {
+    "url": "mongodb://ec2-174-129-170-28.compute-1.amazonaws.com/database?replicaSet=replSet",
+    "name": "primary",
+    "connector": "mongodb"
+  }
+}
