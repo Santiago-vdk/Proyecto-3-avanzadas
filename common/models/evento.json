@@ -1,0 +1,48 @@
+{
+  "name": "Evento",
+  "plural": "Eventos",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "lugar": {
+      "type": "string"
+    },
+    "fechas": {
+      "type": [
+        "date"
+      ],
+      "required": true
+    },
+    "hora": {
+      "type": "string"
+    },
+    "artista": {
+      "type": "string"
+    },
+    "precio": {
+      "type": "number",
+      "required": true
+    },
+    "ventas": {
+      "type": "number",
+      "default": 0
+    },
+    "cadena": {
+      "type": "string"
+    },
+    "edadMinima": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
