@@ -7,7 +7,7 @@
     "validateUpsert": true
   },
   "properties": {
-    "usuario": {
+    "Usuario_id": {
       "type": "string",
       "required": true
     },
@@ -19,10 +19,9 @@
       "type": "number",
       "required": true
     },
-    "articulos": {
-      "type": [
-        "object"
-      ],
+    "eventos": {
+      "type": ["object"
+    ],
       "required": true
     }
   },
