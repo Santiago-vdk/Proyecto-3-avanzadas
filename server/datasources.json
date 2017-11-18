@@ -3,5 +3,13 @@
     "url": "mongodb://ec2-174-129-170-28.compute-1.amazonaws.com/database?replicaSet=replset",
     "name": "mongo",
     "connector": "mongodb"
+  },
+  "neo": {
+    "port": 7474,
+    "username": "neo",
+    "name": "neo4j",
+    "password": "123456",
+    "connector": "neo4j-graph",
+    "hostname": "ec2-174-129-170-28.compute-1.amazonaws.com"
   }
 }
