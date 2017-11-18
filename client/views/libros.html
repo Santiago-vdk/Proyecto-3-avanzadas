@@ -1,4 +1,3 @@
-
 <br />
 <!-- Page Content -->
 <div class="container">
@@ -7,33 +6,43 @@
 
     <div class="col-lg-3">
 
-      <h1 class="my-4">Libros</h1>
-      <div class="list-group">
-        <a href="/" class="list-group-item">Volver a inicio</a>
-        <a href="/electrodomesticos" class="list-group-item">Electrodomesticos</a>
-        <a href="/dvds" class="list-group-item">DVDs</a>
-      </div>
+      <h1 class="my-4">Historial</h1>
 
     </div>
     <!-- /.col-lg-3 -->
 
-    <div class="col-lg-9" ng-init="getLibros()">
+    <div class="col-lg-9" ng-init="getHistorial()">
 
-      <div class="row" style="margin-top: 12%;">
+      <div class="row">
 
-        <div class="col-lg-4 col-md-6 mb-4" ng-repeat="libro in libros">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                   <a href="#">{{libro.nombre}}</a>
-                 </h4>
-              <h5>{{libro.precio}}</h5>
-              <p class="card-text">{{libro.descripcion}}</p>
-            </div>
-            <div class="card-footer">
-              <button class="btn btn-warning" ng-click="agregarArticulo(libro)">Comprar</button>
-            </div>
+        <div class="col-md-12" ng-repeat="compra in libros">
+
+          <h3>Fecha: {{compra.fecha}}</h3>
+          <h3>Monto: {{compra.monto}}</h3>
+          <h3>Eventos:</h3>
+          <div ng-repeat="evento in compra.eventos">
+
+
+            <h4 class="card-title">
+                 <a href="#">
+                   <span ng-if="evento.tipo_evento == 0">Concierto: </span>
+                  <span ng-if="evento.tipo_evento == 1">Teatro: </span>
+                  <span ng-if="evento.tipo_evento == 2">Pelicula: </span>
+                   {{evento.nombre}}</a>
+               </h4>
+            <h6>Fechas: </h6>
+            <h6 ng-repeat="fecha in evento.fechas">{{fecha}}</h6>
+            <h6>Lugar: {{evento.lugar}}</h6>
+            <h6>Hora: {{evento.hora}}</h6>
+            <h6 ng-if="evento.tipo_evento != 2">Artista: {{evento.artista}}</h6>
+            <h6>Precio: {{evento.precio}}</h6>
+
+            <h6 ng-if="evento.tipo_evento == 2">Cadena: {{evento.cadena}}</h6>
+            <h6 ng-if="evento.tipo_evento == 2">Edad Minima:  {{evento.edadMinima}}</h6>
+
+
+
+
           </div>
         </div>
 

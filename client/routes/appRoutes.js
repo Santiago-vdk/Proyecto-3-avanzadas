@@ -19,7 +19,7 @@ angular.module('appRoutes', []).config(['$stateProvider', '$locationProvider', '
     templateUrl: 'views/login.html',
     controller: 'AccessController'
   }).state('libros', {
-    url: '/libros',
+    url: '/historial',
     templateUrl: 'views/libros.html',
     controller: 'ArticulosController'
   }).state('electrodomesticos', {

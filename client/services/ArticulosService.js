@@ -85,6 +85,18 @@ angular.module('ArticulosService', []).factory('Articulos', ['$rootScope', '$htt
       }).catch(function(err) {
         throw err;
       });
+    },
+    getHistorial: function() {
+      var params = {
+        "where":{"Usuario_id":$localStorage.userId }
+
+      }
+
+      return $http.get('/api/compras?access_token=' + $localStorage.accessToken + '?filter=' + JSON.stringify(params)).then(function(data) {
+        return data;
+      }).catch(function(err) {
+        throw err;
+      });
     }
 
   };

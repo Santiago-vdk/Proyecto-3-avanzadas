@@ -5,6 +5,21 @@ angular.module('ArticulosCtrl', []).controller('ArticulosController', ['$rootSco
   $scope.libros = [];
   $scope.carrito = [];
 
+
+  $scope.getHistorial = function() {
+
+    Articulos.getHistorial().then(function(response) {
+console.log(response);
+      angular.forEach(response.data, function(value) {
+        $scope.libros.push(value);
+      });
+
+    }).catch(function(err) {
+      toastr.error('Hubo un error mientras se solicitaban los articulos', 'Error');
+    });
+
+  }
+
   $scope.cargarCarrito = function() {
     angular.forEach($sessionStorage.carrito, function(value) {
       $scope.carrito.push(value);

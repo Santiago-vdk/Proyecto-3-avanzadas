@@ -18,6 +18,9 @@ angular.module('MainCtrl', []).controller('MainController', ['$rootScope', '$sco
   $scope.loggedIn = false;
   $scope.nombre = "";
 
+
+
+
   if ($localStorage.accessToken) {
     Clientes.getCliente().then(function(response) {
 
