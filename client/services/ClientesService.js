@@ -2,13 +2,13 @@ angular.module('ClientesService', []).factory('Clientes', ['$rootScope', '$http'
 
   return {
     login: function(data) {
-      return $http.post('/api/clientes/login', data).then(function(data) {
+      return $http.post('/api/usuarios/login', data).then(function(data) {
         $localStorage.accessToken = data.data.id;
         $localStorage.userId = data.data.userId;
 
 
 
-        
+
 
 
         return data;
@@ -17,28 +17,28 @@ angular.module('ClientesService', []).factory('Clientes', ['$rootScope', '$http'
       });
     },
     logout: function() {
-      return $http.post('/api/clientes/logout?access_token=' + $localStorage.accessToken).then(function(data) {
+      return $http.post('/api/usuarios/logout?access_token=' + $localStorage.accessToken).then(function(data) {
         return data;
       }).catch(function(err) {
         throw err;
       });
     },
     register: function(data) {
-      return $http.post('/api/clientes', data).then(function(data) {
+      return $http.post('/api/usuarios', data).then(function(data) {
         return data;
       }).catch(function(err) {
         throw err;
       });
     },
     getCliente: function() {
-      return $http.get('/api/clientes/' + $localStorage.userId  + '?access_token=' + $localStorage.accessToken).then(function(data) {
+      return $http.get('/api/usuarios/' + $localStorage.userId  + '?access_token=' + $localStorage.accessToken).then(function(data) {
         return data;
       }).catch(function(err) {
         throw err;
       });
     },
     getClientes: function() {
-      return $http.get('/api/clientes').then(function(data) {
+      return $http.get('/api/usuarios').then(function(data) {
         return data;
       }).catch(function(err) {
         throw err;

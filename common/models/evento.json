@@ -16,7 +16,7 @@
     },
     "fechas": {
       "type": [
-        "date"
+        "string"
       ],
       "required": true
     },
@@ -30,7 +30,7 @@
       "type": "number",
       "required": true
     },
-    "ventas": {
+    "tipo_evento": {
       "type": "number",
       "default": 0
     },

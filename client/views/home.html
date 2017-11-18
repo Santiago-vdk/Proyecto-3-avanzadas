@@ -3,11 +3,11 @@
 
   <div class="row">
     <div class="col-lg-3">
-      <h1 class="my-4">Tienda</h1>
+      <h1 class="my-4">Eventos Elite</h1>
       <div class="list-group">
-        <a href="/libros" ng-click="irCrearClientes()" class="list-group-item">Libros</a>
-        <a href="/dvds" ng-click="irCrearEmpleados()" class="list-group-item">DVD's</a>
-        <a href="/electrodomesticos" ng-click="irCrearTiendas()" class="list-group-item">Electrodomésticos</a>
+        <!-- <a href="/libros" ng-click="irCrearClientes()" class="list-group-item">Libros</a> -->
+        <!-- <a href="/dvds" ng-click="irCrearEmpleados()" class="list-group-item">DVD's</a> -->
+        <!-- <a href="/electrodomesticos" ng-click="irCrearTiendas()" class="list-group-item">Electrodomésticos</a> -->
       </div>
 
     </div>
@@ -17,7 +17,7 @@
 
       <div class="row" ui-view="crud">
 
-        <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+        <!-- <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
           <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -42,7 +42,7 @@
                <span class="carousel-control-next-icon" aria-hidden="true"></span>
                <span class="sr-only">Next</span>
              </a>
-        </div>
+        </div> -->
 
         <div class="row">
 
@@ -52,10 +52,22 @@
               <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
-                     <a href="#">{{articulo.nombre}}</a>
+                     <a href="#">
+                       <span ng-if="articulo.tipo_evento == 0">Concierto: </span>
+                      <span ng-if="articulo.tipo_evento == 1">Teatro: </span>
+                      <span ng-if="articulo.tipo_evento == 2">Pelicula: </span>
+                       {{articulo.nombre}}</a>
                    </h4>
-                <h5>{{articulo.precio}}</h5>
-                <p class="card-text">{{articulo.descripcion}}</p>
+                <h6>Fechas: </h6>
+                <h6 ng-repeat="fecha in articulo.fechas">{{fecha}}</h6>
+                <h6>Lugar: {{articulo.lugar}}</h6>
+                <h6>Hora: {{articulo.hora}}</h6>
+                <h6 ng-if="articulo.tipo_evento != 2">Artista: {{articulo.artista}}</h6>
+                <h6>Precio: {{articulo.precio}}</h6>
+
+                <h6 ng-if="articulo.tipo_evento == 2">Cadena: {{articulo.cadena}}</h6>
+                <h6 ng-if="articulo.tipo_evento == 2">Edad Minima:  {{articulo.edadMinima}}</h6>
+
               </div>
               <div class="card-footer">
                 <button class="btn btn-warning" ng-click="agregarArticuloM(articulo)">Comprar</button>

@@ -4,30 +4,15 @@ angular.module('AdministradoresCtrl', []).controller('AdministradoresController'
   $scope.clientes = [];
 
   // Para todos
-  $scope.modificarProductoCatalogo = function() {
-    $state.go('modificarProductoCatalogo');
-  }
-  $scope.verProductosCatalogo = function() {
-    $state.go('verProductosCatalogo');
-  }
-  $scope.promedioProductosClientes = function() {
-    $state.go('promedioProductosClientes');
-  }
-  $scope.rangoProductosCompradosPorCliente = function() {
-    $state.go('rangoProductosCompradosPorCliente');
-  }
-  $scope.topProductos = function() {
-    $state.go('topProductos');
-  }
   $scope.agregarProducto = function() {
     $state.go('agregarProducto');
   }
-  $scope.agregarProductoDvd = function() {
-    $state.go('agregarProductoDvd');
+  $scope.modificarProductoCatalogo = function() {
+    $state.go('modificarProductoCatalogo');
   }
-  $scope.agregarProductoElectrodomestico = function() {
-    $state.go('agregarProductoElectrodomestico');
-  }
+
+
+
 
   $scope.cargarCatalogo = function() {
     Articulos.getArticulos().then(function(response) {
@@ -62,7 +47,14 @@ angular.module('AdministradoresCtrl', []).controller('AdministradoresController'
   }
 
   $scope.agregarArticulo = function(articulo) {
-    Articulos.agregarArticulo(articulo).then(function(response) {
+    var fechas = articulo.fechas.split(",");
+    var fechasFinal = [];
+    for (var i = 0; i < fechas.length; i++) {
+       fechasFinal.push(fechas[i])
+    }
+articulo.fechas = fechas;
+
+   Articulos.agregarArticulo(articulo).then(function(response) {
       toastr.success('Articulo agregado exitosamente', 'Success');
       $state.reload();
     }).catch(function(err) {

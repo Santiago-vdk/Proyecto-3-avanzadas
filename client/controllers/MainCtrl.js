@@ -10,13 +10,14 @@ angular.module('MainCtrl', []).controller('MainController', ['$rootScope', '$sco
   // }
   $scope.logout = function() {
     Clientes.logout().then(function(response) {}).catch(function(err) {
-      alert("Error iniciando sesion");
+      alert("Error cerrando sesion");
     });
     $scope.loggedIn = false;
     $localStorage.$reset();
   }
   $scope.loggedIn = false;
   $scope.nombre = "";
+
   if ($localStorage.accessToken) {
     Clientes.getCliente().then(function(response) {
 
@@ -36,7 +37,7 @@ angular.module('MainCtrl', []).controller('MainController', ['$rootScope', '$sco
     });
 
   }).catch(function(err) {
-    alert("Error iniciando sesion");
+    alert("Error buscando articulos");
   });
 
   $scope.agregarArticuloM = function(articulo) {
@@ -46,12 +47,15 @@ angular.module('MainCtrl', []).controller('MainController', ['$rootScope', '$sco
   }
 
   $scope.isAdmin = function(){
+if($localStorage.username){
+  if($localStorage.username.localeCompare("admin") === 0){
+    return true;
+  } else {
+    return false;
+  }
 
-    if($localStorage.username.localeCompare("admin") === 0){
-      return true;
-    } else {
-      return false;
-    }
+}
+
   }
 
 

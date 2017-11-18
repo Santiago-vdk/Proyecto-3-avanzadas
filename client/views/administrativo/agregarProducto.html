@@ -1,20 +1,48 @@
-<h1>Agregar producto libro al catalogo</h1>
+<h1>Agregar evento</h1>
+<br />
 
-<form ng-model="articulo">
-  Nombre: <input ng-model="articulo.nombre" type="text" name="fname"><br>
-  Descripcion: <input ng-model="articulo.descripcion" type="text" name="lname"><br>
-  Precio: <input ng-model="articulo.precio" type="text" name="lname"><br>
-  Autor: <input ng-model="articulo.autor" type="text" name="lname"><br>
-  Año de publicacion: <input ng-model="articulo.fecha_publicacion" type="text" name="lname"><br>
-  Editorial: <input ng-model="articulo.editorial" type="text" name="lname"><br>
-  Número de páginas: <input ng-model="articulo.numero_paginas" type="text" name="lname"><br>
 
-  <select ng-model="articulo.tipo">
-    <option value="libro">Libro</option>
-    <option value="electrodomestico">Electrodomestico</option>
-    <option value="dvd">DVD</option>
+{
+  "nombre": "string",
+  "lugar": "string",
+  "fechas": [
+    "string"
+  ],
+  "hora": "string",
+  "artista": "string",
+  "precio": 0,
+  "tipo_evento": 0,
+  "cadena": "string",
+  "edadMinima": 0,
+  "id": "string"
+}
 
-  </select>
+<div class="container">
 
-  <button class="btn btn-success" ng-click="agregarArticulo(articulo)">Agregar</button>
-</form>
+  <div class="row">
+    <div class="col-md-12">
+      <form ng-model="articulo">
+        Nombre: <input ng-model="articulo.nombre" type="text" name="fname"><br>
+        Lugar: <input ng-model="articulo.lugar" type="text" name="lname"><br>
+        Fechas (Separar por ,): <input ng-model="articulo.fechas" type="text" name="lname"><br>
+        Hora: <input ng-model="articulo.hora" type="text" name="lname"><br>
+        Artista: <input ng-model="articulo.editorial" type="text" name="lname"><br>
+        Precio: <input ng-model="articulo.precio" type="text" name="lname"><br>
+
+        Cadena: <input ng-model="articulo.cadena" type="text" name="lname"><br>
+        Edad Minima: <input ng-model="articulo.edadMinima" type="text" name="lname"><br>
+
+        <select ng-model="articulo.tipo_evento">
+          <option value="0">Concierto</option>
+          <option value="1">Teatro</option>
+          <option value="2">Pelicula</option>
+
+        </select>
+
+        <button class="btn btn-success" ng-click="agregarArticulo(articulo)">Agregar</button>
+      </form>
+
+
+    </div>
+  </div>
+</div>

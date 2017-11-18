@@ -18,13 +18,23 @@ angular.module('ArticulosCtrl', []).controller('ArticulosController', ['$rootSco
 
   $scope.realizarCompra = function() {
 
-    var orden = {
-      "cliente": $localStorage.username,
-      "productos": $sessionStorage.carrito
-    }
-    console.log(orden);
 
-    Ventas.crearVenta(orden).then(function(response) {
+    var monto = 0
+    for (var i = 0; i < $sessionStorage.carrito.length; i++) {
+       var art = $sessionStorage.carrito[i];
+       monto = monto + art.precio;
+    }
+
+    var compra = {
+      "Usuario_id": $localStorage.userId,
+      "fecha": "2017-11-18T01:03:02.860Z",
+      "monto": monto,
+      "eventos": $sessionStorage.carrito
+    }
+
+
+
+    Ventas.crearVenta(compra).then(function(response) {
 
       $sessionStorage.carrito = []
 
