@@ -44,5 +44,9 @@
   "Usuario": {
     "dataSource": "mongo",
     "public": true
+  },
+  "test": {
+    "dataSource": null,
+    "public": true
   }
 }
