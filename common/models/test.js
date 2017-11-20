@@ -11,9 +11,12 @@ module.exports = function(Test) {
 
   const personName = 'Alice';
   const resultPromise = session.run(
-  
+    'CREATE (a:Person {name: $name}) RETURN a',
     {name: personName}
   );
+
+
+
 
 
   Test.status = function(cb) {
