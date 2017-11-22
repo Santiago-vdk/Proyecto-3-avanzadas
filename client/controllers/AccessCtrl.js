@@ -13,13 +13,12 @@ angular.module('AccessCtrl', []).controller('AccessController', ['$rootScope', '
   $scope.login = function(cliente) {
 
     Clientes.login(cliente).then(function(response) {
-console.log(response.data.userId);
+      console.log(response.data.userId);
       Clientes.getCliente(response.data.userId).then(function(response){
         $localStorage.username = response.data.username;
 
       });
-
-      toastr.success('Se ha registrado exitosamente', 'Success');
+      toastr.success('Se ha iniciado sesión exitosamente', 'Success');
     }).catch(function(err) {
       toastr.error('Hubo un error mientras se solicitaban los articulos', 'Error');
     });
