@@ -11,7 +11,11 @@ angular.module('ArticulosCtrl', []).controller('ArticulosController', ['$rootSco
     Articulos.getHistorial().then(function(response) {
 console.log(response);
       angular.forEach(response.data, function(value) {
-        $scope.libros.push(value);
+        console.log(value);
+        if(value.Usuario_id == $localStorage.userId){
+          $scope.libros.push(value);
+        }
+
       });
 
     }).catch(function(err) {
