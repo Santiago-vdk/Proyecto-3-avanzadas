@@ -46,7 +46,7 @@ console.log(response);
 
     var compra = {
       "Usuario_id": $localStorage.userId,
-      "fecha": "2017-11-18T01:03:02.860Z",
+      "fecha": "2017-11-23",
       "monto": monto,
       "eventos": $sessionStorage.carrito
     }
