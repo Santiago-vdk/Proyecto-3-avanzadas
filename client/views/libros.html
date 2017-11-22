@@ -34,7 +34,7 @@
             <h6 ng-repeat="fecha in evento.fechas">{{fecha}}</h6>
             <h6>Lugar: {{evento.lugar}}</h6>
             <h6>Hora: {{evento.hora}}</h6>
-            <h6 ng-if="evento.tipo_evento != 2 || evento.tipo_evento != 1">Artista: {{evento.artista}}</h6>
+            <h6 ng-if="evento.tipo_evento != 2 || evento.tipo_evento != 1">Artista: {{evento.editorial}}</h6>
             <h6>Precio: {{evento.precio}}</h6>
 
             <h6 ng-if="evento.tipo_evento == 2">Cadena: {{evento.cadena}}</h6>
